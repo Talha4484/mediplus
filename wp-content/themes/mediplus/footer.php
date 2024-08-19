@@ -66,7 +66,7 @@ $quick_links = get_field('quick_links', 'option');
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
-								<h2><?php echo $footer_section['footer_news_letter_heading'];?></h2>
+								<h2><?php echo $footer_section['footer_news_letter_heading']; ?></h2>
 								<p><?php echo $footer_section['footer_news_letter_detail']; ?></p>
 								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
 									<input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
