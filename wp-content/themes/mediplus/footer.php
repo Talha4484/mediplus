@@ -1,3 +1,10 @@
+<?php
+// Get footer settings from ACF
+$footer_section = get_field('footer_section', 'option');
+// $quick_links = get_field('quick_links', 'option');
+$quick_links = get_field('quick_links', 'option');
+?>
+
 <footer id="footer" class="footer ">
 			<!-- Footer Top -->
 			<div class="footer-top">
@@ -5,8 +12,10 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
-								<h2>About Us</h2>
-								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
+								<h2><?php echo $footer_section['footer_heading'];?></h2>
+									 
+
+								<p><?php echo $footer_section['footer_paragraph'];?></p>
 								<!-- Social -->
 								<ul class="social">
 									<li><a href="#"><i class="icofont-facebook"></i></a></li>
@@ -23,12 +32,12 @@
 								<h2>Quick Links</h2>
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
-										<ul>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>	
+										<ul>										
+											<li><a href="<?php echo $quick_links['footer_about_us'];?>"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+											<li><a href="<?php echo $quick_links['footer_quick_links'];?>"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
+											<li><a href="<?php echo $quick_links['open_hours'];?>"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
+											<li><a href="<?php echo $quick_links['footer_news_letter'];?>"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
+											<li><a href="<?php echo $quick_links['footer_quick_links'];?>"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>	
 										</ul>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
@@ -48,7 +57,7 @@
 								<h2>Open Hours</h2>
 								<p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
 								<ul class="time-sidual">
-									<li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
+									<li class="day">Monday - Friday <span>8.00-20.00</span></li>
 									<li class="day">Saturday <span>9.00-18.30</span></li>
 									<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
 								</ul>
@@ -84,3 +93,6 @@
 			<!--/ End Copyright -->
 		</footer>
 		
+	<?php wp_footer();?>
+		</body>
+	</html>

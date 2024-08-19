@@ -90,5 +90,3 @@
 		<!-- Include GMaps library -->
 		<script src="<?php echo get_template_directory_uri(); ?>/js/gmaps.min.js"></script>
 
-        </body>
-</html>
