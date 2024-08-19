@@ -54,19 +54,20 @@ $quick_links = get_field('quick_links', 'option');
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
-								<h2>Open Hours</h2>
-								<p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
+								<h2><?php echo $footer_section['open_hours_heading']; ?></h2>
+								<p><?php echo $footer_section['open_hours_detail'];?></p>
+								<!-- <?php print_r($footer_section);?> -->
 								<ul class="time-sidual">
-									<li class="day">Monday - Friday <span>8.00-20.00</span></li>
-									<li class="day">Saturday <span>9.00-18.30</span></li>
-									<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+									<!-- <li class="day"<?php echo $footer_section['open_hours_detail'] ?>></li> -->
+									<!-- <li class="day">Saturday <span>9.00-18.30</span></li>
+									<li class="day">Monday - Thusday <span>9.00-15.00</span></li> -->
 								</ul>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
-								<h2>Newsletter</h2>
-								<p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+								<h2><?php echo $footer_section['footer_news_letter_heading'];?></h2>
+								<p><?php echo $footer_section['footer_news_letter_detail']; ?></p>
 								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
 									<input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
 										onblur="this.placeholder = 'Your email address'" required="" type="email">
