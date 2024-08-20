@@ -20,10 +20,15 @@ get_header();
 							<div class="col-lg-7">
 								<div class="text">
 									<h1>
-									<?php echo $head['banner_heading'];?>	 
+										<?php if (!empty($head['banner_heading'])): ?>
+                               			<h1><?php echo esc_html($head['banner_heading']); ?></h1>
+                            			<?php endif; ?>
+									
 									</h1>
 									<p>
-									<?php echo $head['banner_paragraph'];?>	 
+										<?php if (!empty($head['banner_paragraph'])): ?>
+										<p><?php echo $head['banner_paragraph'];?></p>	 
+										<?php endif; ?>
 									</p>
 									
 								
@@ -46,11 +51,17 @@ get_header();
 							<div class="col-lg-7">
 								<div class="text">
 									<h1>
-										<?php echo $head['banner_heading_1'];?>
+										
+										<?php if (!empty($head['banner_heading_1'])): ?>
+                               			<h1><?php echo esc_html($head['banner_heading_1']); ?></h1>
+                            			<?php endif; ?>
+									
 									</h1>
 																		
 									<p>
-										<?php echo $head['banner_paragraph_1'];?> 
+										<?php if (!empty($head['banner_paragraph_1'])): ?>
+										<p><?php echo $head['banner_paragraph_1'];?></p>	 
+										<?php endif; ?>
 									</p>
 									<div class="button">
 										<a href="#" class="btn">Get Appointment</a>
@@ -71,11 +82,16 @@ get_header();
 							<div class="col-lg-7">
 								<div class="text">
 									<h1>
-										<?php echo $head['banner_heading_2'];?>
-									</h1>
+										<?php if (!empty($head['banner_heading_2'])): ?>
+                               			<h1><?php echo esc_html($head['banner_heading_2']); ?></h1>
+                            			<?php endif; ?>
+									
+									</h1>									
 									<p>
-										<?php echo $head['banner_paragraph_2'];?>
-									 </p>
+										<?php if (!empty($head['banner_paragraph_2'])): ?>
+										<p><?php echo $head['banner_paragraph_2'];?></p>	 
+										<?php endif; ?>
+									</p>
 									<div class="button">
 										<a href="#" class="btn">Get Appointment</a>
 										<a href="#" class="btn primary">Contact Now</a>
@@ -103,13 +119,24 @@ get_header();
 										<i class="fa fa-ambulance"></i>
 									</div>
 									<div class="single-content">
-										<span><?php echo $head['schedule_author'];?></span>
-										<h4><?php echo $head['schedule_title'];?></h4>
-										<p><?php echo $head['schedule_paragraph'];?></p>
-										<a href="<?php echo $head['learn_more']['url'];?>">
-										<?php echo $head['learn_more']['title'];?>
-										<i class="fa fa-long-arrow-right"></i>
-									</a>
+									<?php if (!empty($head['schedule_author'])): ?>
+										<p><?php echo $head['schedule_author']; ?></p>	 
+										<?php endif; ?>
+
+										<?php if (!empty($head['schedule_title'])): ?>
+    									<h4><?php echo $head['schedule_title']; ?></h4>
+										<?php endif; ?>
+
+										<?php if (!empty($head['schedule_paragraph'])): ?>
+										<p><?php echo $head['schedule_paragraph']; ?></p>	 
+										<?php endif; ?>
+
+
+										<a href="<?php if(!empty($head['learn_more'])): echo $head['learn_more']['url'];?>">
+   										<?php echo $head['learn_more']['title']; ?>
+   										<i class="fa fa-long-arrow-right"></i>
+										</a>
+										<?php endif; ?>
 									</div>
 								</div>
 							</div>
@@ -122,13 +149,24 @@ get_header();
 										<i class="icofont-prescription"></i>
 									</div>
 									<div class="single-content">
-										<span><?php echo $head['schedule_author_1'];?></span>
+										<span><?php if (!empty($head['schedule_author_1'])): ?>
+										<p><?php echo $head['schedule_author_1'];?></p>	 
+										</span>
+										<?php endif; ?>
+
+										<span><?php if(!empty($head['schedule_title_1'])): ?></span>
 										<h4><?php echo $head['schedule_title_1'];?></h4>
-										<p><?php echo $head['schedule_paragraph_1'];?></p>
-										<a href="<?php echo $head['learn_more']['url'];?>">
-   										<?php echo $head['learn_more']['title'];?>
+										<?php endif; ?>
+
+										<?php if (!empty($head['schedule_paragraph_1'])): ?>
+										<p><?php echo $head['schedule_paragraph_1']; ?></p>	 
+										<?php endif; ?>
+
+										<a href="<?php if(!empty($head['learn_more1'])): echo $head['learn_more1']['url'];?>">
+   										<?php echo $head['learn_more1']['title'];?>
    										<i class="fa fa-long-arrow-right"></i>
-									</a>
+										</a>
+										<?php endif; ?>
 									</div>
 								</div>
 							</div>
@@ -141,15 +179,23 @@ get_header();
 										<i class="icofont-ui-clock"></i>
 									</div>
 									<div class="single-content">
-										<span><?php echo $head['schedule_author_2'];?></span>
+										<?php if (!empty($head['schedule_author_2'])): ?>
+										<p><?php echo $head['schedule_author_2'];?></p>	 
+										<?php endif; ?>			
+
+										<span><?php if(!empty($head['schedule_title_2'])): ?></span>
 										<h4><?php echo $head['schedule_title_2'];?></h4>
-										<p><?php echo $head['schedule_paragraph_2'];?></p>
-										
-										<a href="<?php echo $head['learn_more']['url'];?>">
-   										<?php echo $head['learn_more']['title'];?>
+										<?php endif; ?>
+
+										<?php if (!empty($head['schedule_paragraph_2'])): ?>
+										<p><?php echo $head['schedule_paragraph_2']; ?></p>	 
+										<?php endif; ?>
+
+										<a href="<?php if(!empty($head['learn_more2'])): echo $head['learn_more2']['url'];?>">
+   										<?php echo $head['learn_more2']['title'];?>
    										<i class="fa fa-long-arrow-right"></i>
-									</a>
-									</div>
+										</a>
+										<?php endif; ?>
 								</div>
 							</div>
 						</div>
@@ -165,11 +211,15 @@ get_header();
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2><?php echo $head['schedule_author_2'];?></h2>
+								<?php if(!empty($head['schedule_author_2'])): ?>
+								<h2><?php echo $head['schedule_author_2'];?></h2>
+								<?php endif; ?>
+
 							<img src="<?php echo esc_url(get_template_directory_uri() . '/img/section-img.png'); ?>" alt="Description of the image">
 
-
-							<p><?php echo $head['feautes_main_paragraph'];?></p>
+								<?php if (!empty($head['feautes_main_paragraph'])): ?>
+								<p><?php echo $head['feautes_main_paragraph']; ?></p>	 
+								<?php endif; ?>
 						</div>
 					</div>
 				</div>
@@ -180,8 +230,13 @@ get_header();
 							<div class="signle-icon">
 								<i class="icofont icofont-ambulance-cross"></i>
 							</div>
-							<h3><?php echo $head['single_heading'];?></h3>
-							<p><?php echo $head['single_paragraph'];?></p>
+							<?php if(!empty($head['single_heading'])): ?>
+								<h3><?php echo $head['single_heading'];?></h3>
+								<?php endif; ?>
+
+							<?php if (!empty($head['single_paragraph'])): ?>
+								<p><?php echo $head['single_paragraph']; ?></p>	 
+								<?php endif; ?>	
 						</div>
 						<!-- End Single features -->
 					</div>
@@ -191,11 +246,18 @@ get_header();
 							<div class="signle-icon">
 								<i class="icofont icofont-medical-sign-alt"></i>
 							</div>
-							<h3><?php echo $head['single_heading_1'];?></h3>
-							<p><?php echo $head['single_paragraph_1'];?></p>
+
+							<?php if(!empty($head['single_heading_1'])): ?>
+								<h3><?php echo $head['single_heading_1'];?></h3>
+								<?php endif; ?>
+
+							<?php if (!empty($head['single_paragraph_1'])): ?>
+								<p><?php echo $head['single_paragraph_1']; ?></p>	 
+								<?php endif; ?>	
 						</div>
 						<!-- End Single features -->
 					</div>
+
 					<div class="col-lg-4 col-12">
 						<!-- Start Single features -->
 						<div class="single-features last">
